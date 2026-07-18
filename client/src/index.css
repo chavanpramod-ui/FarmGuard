@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white text-gray-800 font-sans min-h-screen antialiased selection:bg-emerald-500 selection:text-white;
+    background-image: none;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f8f9fa;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1f7c3a;
+}
+
+@layer components {
+  /* Glassmorphism Panels */
+  .glass-panel {
+    @apply bg-white border border-gray-200 rounded-xl shadow-sm transition-all duration-300;
+  }
+  .glass-panel:hover {
+    @apply border-gray-300 shadow-md;
+  }
+
+  /* Glowing Effects */
+  .glow-green {
+    @apply shadow-emerald-glow;
+  }
+  .glow-gold {
+    @apply shadow-gold-glow;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 font-sans font-semibold rounded-lg transition-all duration-300 active:scale-95 cursor-pointer select-none whitespace-nowrap;
+  }
+  .btn-primary {
+    @apply bg-emerald-600 to-emerald-600 text-white font-bold shadow-md hover:bg-emerald-700 hover:shadow-lg hover:-translate-y-0.5;
+  }
+  .btn-gold {
+    @apply bg-amber-600 to-amber-600 text-white font-extrabold shadow-md hover:bg-amber-700 hover:shadow-lg hover:-translate-y-0.5;
+  }
+  .btn-whatsapp {
+    @apply bg-[#25D366] to-[#128C7E] text-white font-extrabold shadow-md hover:brightness-110 hover:shadow-lg hover:-translate-y-0.5;
+  }
+  .btn-outline {
+    @apply bg-white border border-gray-300 text-gray-900 hover:bg-gray-50 hover:border-gray-400 hover:-translate-y-0.5;
+  }
+
+  /* Badges */
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider;
+  }
+  .badge-green {
+    @apply bg-emerald-100 text-emerald-700 border border-emerald-300 shadow-sm;
+  }
+  .badge-gold {
+    @apply bg-amber-100 text-amber-700 border border-amber-300 shadow-sm;
+  }
+  .badge-danger {
+    @apply bg-red-100 text-red-700 border border-red-300;
+  }
+
+  /* Form Inputs */
+  .form-input {
+    @apply w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition-all text-sm font-medium;
+  }
+  .form-label {
+    @apply block text-xs font-bold text-gray-600 uppercase tracking-wider mb-1.5;
+  }
+
+  /* Modals */
+  .modal-overlay {
+    @apply fixed inset-0 bg-black/30 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fadeIn;
+  }
+  .modal-content {
+    @apply bg-white border border-gray-300 rounded-2xl shadow-xl max-h-[90vh] overflow-y-auto animate-slideUp;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+.animate-slideUp {
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
