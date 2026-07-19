@@ -12,9 +12,14 @@ const Footer = ({ setCurrentView, language }) => {
             <div className="w-9 h-9 rounded-xl bg-emerald-600 flex items-center justify-center text-white shadow-md">
               <Zap size={22} className="fill-white" />
             </div>
-            <span className="text-xl font-black tracking-tight text-gray-900">
-              Farm<span className="text-emerald-600">Guard</span>
-            </span>
+            <div>
+              <span className="text-xl font-black tracking-tight text-gray-900 block leading-none">
+                Farm<span className="text-emerald-600">Guard</span>
+              </span>
+              <span className="text-xs font-black text-amber-700 tracking-wide mt-1 block">
+                Abhi Enterprises
+              </span>
+            </div>
           </div>
           <p className="leading-relaxed text-gray-600 font-medium">
             {language === 'en' && 'India’s trusted direct-to-farmer agricultural technology portal. Empowering farmers with ISI-compliant non-lethal solar Jhatka fence systems, brush cutters, and smart solar pump controllers.'}

@@ -55,6 +55,9 @@ const Navbar = ({
                 {language === 'hi' && 'भारत की स्मार्ट खेत सुरक्षा'}
                 {language === 'mr' && 'भारताचे स्मार्ट शेती संरक्षण'}
               </p>
+              <p className="text-[11px] font-black text-amber-700 tracking-wide mt-0.5">
+                Abhi Enterprises
+              </p>
             </div>
           </div>
 
