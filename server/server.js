@@ -30,19 +30,13 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// Seed MongoDB database if connected and empty or outdated
+// Seed MongoDB database if connected and sync latest catalog
 const seedDatabaseIfEmpty = async () => {
   try {
-    const checkNew = await Product.findOne({ _id: 'prod_jhatka_12kv_set' });
-    const count = await Product.countDocuments();
-    if (!checkNew || count !== seedProducts.length) {
-      console.log("Updating/Seeding MongoDB with exact shop catalog and retail pricing...");
-      await Product.deleteMany({});
-      await Product.insertMany(seedProducts);
-      console.log(`Successfully seeded ${seedProducts.length} shop products into MongoDB.`);
-    } else {
-      console.log(`MongoDB already contains updated shop catalog (${count} products).`);
-    }
+    console.log("Updating/Seeding MongoDB with exact shop catalog and latest image paths...");
+    await Product.deleteMany({});
+    await Product.insertMany(seedProducts);
+    console.log(`Successfully synced ${seedProducts.length} shop products into MongoDB.`);
   } catch (err) {
     console.warn("Error checking/seeding DB:", err.message);
   }

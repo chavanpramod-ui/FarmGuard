@@ -155,8 +155,8 @@ const HeroBanner = ({ setCurrentView, language }) => {
                 {/* Main Product Image */}
                 <div className="relative overflow-hidden group bg-gray-100 aspect-[4/3] flex items-center justify-center">
                   <img
-                    src="/images/jhatka-10kv.jpg"
-                    alt="FarmGuard 10kV Pro Solar Hybrid Jhatka Machine"
+                    src="/images/jhatka-18kv-set.jpg"
+                    alt="Complete 18 KV Solar Fencing Set"
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent"></div>

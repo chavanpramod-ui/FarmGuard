@@ -49,11 +49,11 @@ const SmartFenceCalculator = ({ addToCart, allProducts, language }) => {
       if (powerSource !== 'grid') {
         return allProducts.find(p => p._id === 'prod_jhatka_18kv_set') || {
           _id: 'prod_jhatka_18kv_set',
-          name: 'Complete 18 KV Solar Fencing All-in-One Kit (18 KV Set)',
-          nameHindi: 'कम्प्लीट 18 KV सोलर फेंसिंग ऑल-इन-वन किट (18 KV हैवी सेट)',
-          nameMarathi: 'कम्प्लीट 18 KV सोलर कुंपण ऑल-इन-वन किट (18 KV हेवी सेट)',
+          name: language === 'en' ? 'Complete 18 KV Solar Fencing Set' : (language === 'hi' ? '18 KV सोलर फेंसिंग संपूर्ण सेट' : '18 KV सोलर कुंपण संपूर्ण सेट'),
           price: 12700,
-          image: '/images/jhatka-15kv.jpg'
+          originalPrice: 16800,
+          specs: 'Machine + 30AH Battery + 40W Panel + Wire + Insulators',
+          image: '/images/jhatka-18kv-set.jpg'
         };
       } else {
         return allProducts.find(p => p._id === 'prod_jhatka_02') || {

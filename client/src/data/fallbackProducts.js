@@ -74,7 +74,7 @@ const fallbackProducts = [
       warranty: "2 Years Replacement & Service Warranty",
       solarPanelSize: "40W High-Efficiency Monocrystalline Panel"
     },
-    image: "/images/jhatka-15kv.jpg",
+    image: "/images/jhatka-18kv-set.jpg",
     inStock: true,
     isFeatured: true,
     rating: 4.9,
