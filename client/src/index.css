@@ -27,12 +27,17 @@
 }
 
 @layer components {
+  /* Global Interactive Elements */
+  a, button {
+    @apply transition-all duration-300 ease-out;
+  }
+
   /* Glassmorphism Panels */
   .glass-panel {
-    @apply bg-white border border-gray-200 rounded-xl shadow-sm transition-all duration-300;
+    @apply bg-white border border-gray-100 rounded-2xl shadow-sm transition-all duration-500 ease-out;
   }
   .glass-panel:hover {
-    @apply border-gray-300 shadow-md;
+    @apply border-emerald-300 shadow-[0_15px_40px_-12px_rgba(16,185,129,0.25)] -translate-y-1.5 scale-[1.015];
   }
 
   /* Glowing Effects */
@@ -45,19 +50,27 @@
 
   /* Buttons */
   .btn {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 font-sans font-semibold rounded-lg transition-all duration-300 active:scale-95 cursor-pointer select-none whitespace-nowrap;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 font-sans font-semibold rounded-xl transition-all duration-300 ease-out active:scale-95 cursor-pointer select-none whitespace-nowrap relative overflow-hidden;
   }
+  .btn::after {
+    content: '';
+    @apply absolute inset-0 bg-white/20 translate-y-full transition-transform duration-300 ease-out rounded-xl;
+  }
+  .btn:hover::after {
+    @apply translate-y-0;
+  }
+  
   .btn-primary {
-    @apply bg-emerald-600 to-emerald-600 text-white font-bold shadow-md hover:bg-emerald-700 hover:shadow-lg hover:-translate-y-0.5;
+    @apply bg-gradient-to-r from-emerald-600 to-emerald-500 text-white font-bold shadow-md hover:shadow-[0_8px_25px_-5px_rgba(16,185,129,0.5)] hover:-translate-y-1;
   }
   .btn-gold {
-    @apply bg-amber-600 to-amber-600 text-white font-extrabold shadow-md hover:bg-amber-700 hover:shadow-lg hover:-translate-y-0.5;
+    @apply bg-gradient-to-r from-amber-600 to-amber-500 text-white font-extrabold shadow-md hover:shadow-[0_8px_25px_-5px_rgba(245,158,11,0.5)] hover:-translate-y-1;
   }
   .btn-whatsapp {
-    @apply bg-[#25D366] to-[#128C7E] text-white font-extrabold shadow-md hover:brightness-110 hover:shadow-lg hover:-translate-y-0.5;
+    @apply bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white font-extrabold shadow-md hover:shadow-[0_8px_25px_-5px_rgba(37,211,102,0.5)] hover:-translate-y-1;
   }
   .btn-outline {
-    @apply bg-white border border-gray-300 text-gray-900 hover:bg-gray-50 hover:border-gray-400 hover:-translate-y-0.5;
+    @apply bg-white border-2 border-gray-200 text-gray-800 hover:border-emerald-500 hover:text-emerald-700 hover:bg-emerald-50 hover:-translate-y-1 hover:shadow-lg;
   }
 
   /* Badges */
