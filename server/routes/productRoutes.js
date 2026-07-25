@@ -17,6 +17,7 @@ router.get('/', async (req, res) => {
       let query = {};
       if (category && category !== 'all') query.category = category;
       if (featured === 'true') query.isFeatured = true;
+      if (search && typeof search === 'string' && search.trim() !== '') {
         query.$or = [
           { name: { $regex: search, $options: 'i' } },
           { nameHindi: { $regex: search, $options: 'i' } },
@@ -24,6 +25,7 @@ router.get('/', async (req, res) => {
           { tagline: { $regex: search, $options: 'i' } },
           { taglineMarathi: { $regex: search, $options: 'i' } }
         ];
+      }
       if (minPrice || maxPrice) {
         query.price = {};
         if (minPrice) query.price.$gte = Number(minPrice);

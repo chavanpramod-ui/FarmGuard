@@ -8,30 +8,30 @@ export default {
     extend: {
       colors: {
         bg: {
-          primary: '#ffffff',
-          secondary: '#f8f9fa',
-          tertiary: '#f0f2f5',
-          card: 'rgba(255, 255, 255, 0.98)',
-          glass: 'rgba(255, 255, 255, 0.92)',
+          primary: '#fafaf9',
+          secondary: '#f5f5f4',
+          tertiary: '#e7e5e4',
+          card: 'rgba(255, 255, 255, 0.95)',
+          glass: 'rgba(255, 255, 255, 0.85)',
         },
         emerald: {
-          400: '#22c55e',
-          500: '#16a34a',
-          600: '#15803d',
-          700: '#166534',
-          900: '#14532d',
+          400: '#34d399',
+          500: '#10b981',
+          600: '#059669',
+          700: '#047857',
+          900: '#064e3b',
         },
         premium: {
-          green: '#1f7c3a',
-          darkgreen: '#0d5a2f',
-          lightgreen: '#e8f5e9',
+          green: '#0f4c3a',
+          darkgreen: '#062d20',
+          lightgreen: '#ecfdf5',
           gold: '#d4af37',
-          silver: '#e8e8e8',
+          silver: '#e5e7eb',
         },
         solar: {
           gold: '#d4a574',
-          amber: '#b8956a',
-          yellow: '#d4af37',
+          amber: '#f59e0b',
+          yellow: '#fbbf24',
         }
       },
       fontFamily: {
